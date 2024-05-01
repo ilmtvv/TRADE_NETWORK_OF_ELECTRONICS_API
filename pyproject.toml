@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "trade-network-of-electronics"
+version = "0.1.0"
+description = ""
+authors = ["ilmtvv <napalkah@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
