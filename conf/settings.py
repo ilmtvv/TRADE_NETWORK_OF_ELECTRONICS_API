@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'users',
+
     'rest_framework',
-    'rest_framework.authtoken',
+
     'djoser',
 
 ]
@@ -137,7 +139,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # REST framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
 
-    )
+    ),
+
 }
+
+# JWT settings
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=333),
+    'AUTH_HEADER_TYPES': ('JWT',),
+
+}
+
+# Djoser settings
+DJOSER = {
+
+}
+
+# Auth model settings
+AUTH_USER_MODEL = 'users.User'
